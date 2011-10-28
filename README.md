@@ -10,7 +10,7 @@ How To Use
 ----------
 `hermes play`
 `hermes pause`
-`hermes >` - Play/pause current track.  This is dependant on the current state.  If you `hermes play` when playing, it will pause 
+`hermes >` - Play/pause current track.  This is dependent on the current state.  If you `hermes play` when playing, it will pause 
 
 `hermes next`
 `hermes skip`
