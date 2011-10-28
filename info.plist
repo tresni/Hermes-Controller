@@ -9,8 +9,8 @@
 	<key>category</key>
 	<string>APPLESCRIPTS</string>
 	<key>command</key>
-	<string>on alfred_script(ctrl)	tell application "System Events"		set frontmostApplication to name of the first process whose frontmost is true	end tell	tell application "Hermes"		activate		tell application "System Events"			if ctrl is equal to "like" or ctrl is equal to "good" or ctrl is equal to "+" then				tell application "System Events" to keystroke "l" using command down			else if ctrl = "dislike" or ctrl = "bad" or ctrl = "-" then				tell application "System Events" to keystroke "d" using command down			else if ctrl = "skip" or ctrl = "next" then				tell application "System Events" to keystroke "e" using command down			else if ctrl = "tired" then				tell application "System Events" to keystroke "t" using command down
-			else if ctrl = "play" or ctrl = "pause" then
+	<string>on alfred_script(ctrl)	tell application "System Events"		set frontmostApplication to name of the first process whose frontmost is true	end tell	tell application "Hermes"		activate		tell application "System Events"			if ctrl is equal to "like" or ctrl is equal to "good" or ctrl is equal to "+" then				tell application "System Events" to keystroke "l" using command down			else if ctrl = "dislike" or ctrl = "bad" or ctrl = "-" then				tell application "System Events" to keystroke "d" using command down			else if ctrl = "skip" or ctrl = "next" or ctrl = "~" then				tell application "System Events" to keystroke "e" using command down			else if ctrl = "tired" or ctrl = "!" then				tell application "System Events" to keystroke "t" using command down
+			else if ctrl = "play" or ctrl = "pause" or ctrl = "&gt;" or ctrl = "#" then
 				tell application "System Events" to keystroke " "
 			end if		end tell	end tell		if not (ctrl = "activate" or ctrl = "show") then		tell application frontmostApplication to activate	end ifend alfred_script</string>
 	<key>keyword</key>
