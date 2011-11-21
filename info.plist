@@ -14,6 +14,7 @@
 	tell application "Hermes"		if ctrl is equal to "like" or ctrl is equal to "good" or ctrl is equal to "+" then
 			thumbs up		else if ctrl = "dislike" or ctrl = "bad" or ctrl = "-" then			thumbs down		else if ctrl = "skip" or ctrl = "next" or ctrl = "~" then			next song		else if ctrl = "tired" or ctrl = "!" then
 			activate			tell application "System Events" to keystroke "t" using command down
+			tell application frontmostApplication to activate
 		else if ctrl = "play" or ctrl="&gt;" then
 			play
 		else if ctrl = "pause" or ctrl = "&gt;" or ctrl = "#" then
@@ -24,7 +25,9 @@
 			mute
 		else if ctrl = "unmute" then
 			full volume
-		end if	end tell		if not (ctrl = "activate" or ctrl = "show") and (ctrl = "tired" or ctrl = "!") then		tell application frontmostApplication to activate	end ifend alfred_script</string>
+		else if ctrl = "show" or ctrl = "activate" then
+			activate
+		end if	end tellend alfred_script</string>
 	<key>disabled</key>
 	<false/>
 	<key>keyword</key>
