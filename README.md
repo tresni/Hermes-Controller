@@ -9,8 +9,12 @@ Download and double click Hermes Controller.alfredextension
 How To Use
 ----------
 `hermes play`
+`hermes >` - Start playing selected station or unpause.
+
 `hermes pause`
-`hermes >` - Play/pause current track.  This is dependent on the current state.  If you `hermes play` when playing, it will pause 
+`hermes #` - Pause current track, use `hermes play` to resume
+
+`hermes playpause` - Old behavior, toggling Hermes' play/pause state
 
 `hermes next`
 `hermes skip`
@@ -27,11 +31,20 @@ How To Use
 `hermes tired`
 `hermes !` - Mark song as being overplayed
 
+`hermes mute`
+`hermes silence` - Mute Hermes volume
+
+`hermes unmute` - Restore Hermes full volume
+
 `hermes activate`
 `hermes show` - bring the hermes window forward
 
 Version History
 ---------------
+1.1.0 - 212 November 2011
+ - Use Hermes' new AppleScript support
+ - Add mute, unmute, playpause support
+ - play/pause no longer act as toggles
 1.0.1 - 28 October 2011
  - Added some additional single character commands
 1.0.0 - 27 October 2011

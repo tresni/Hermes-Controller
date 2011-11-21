@@ -9,12 +9,28 @@
 	<key>category</key>
 	<string>APPLESCRIPTS</string>
 	<key>command</key>
-	<string>on alfred_script(ctrl)	tell application "System Events"		set frontmostApplication to name of the first process whose frontmost is true	end tell	tell application "Hermes"		activate		tell application "System Events"			if ctrl is equal to "like" or ctrl is equal to "good" or ctrl is equal to "+" then				tell application "System Events" to keystroke "l" using command down			else if ctrl = "dislike" or ctrl = "bad" or ctrl = "-" then				tell application "System Events" to keystroke "d" using command down			else if ctrl = "skip" or ctrl = "next" or ctrl = "~" then				tell application "System Events" to keystroke "e" using command down			else if ctrl = "tired" or ctrl = "!" then				tell application "System Events" to keystroke "t" using command down
-			else if ctrl = "play" or ctrl = "pause" or ctrl = "&gt;" or ctrl = "#" then
-				tell application "System Events" to keystroke " "
-			end if		end tell	end tell		if not (ctrl = "activate" or ctrl = "show") then		tell application frontmostApplication to activate	end ifend alfred_script</string>
+	<string>on alfred_script(ctrl)
+	# We need this for saying you are tired of song.	tell application "System Events"		set frontmostApplication to name of the first process whose frontmost is true	end tell
+	tell application "Hermes"		if ctrl is equal to "like" or ctrl is equal to "good" or ctrl is equal to "+" then
+			thumbs up		else if ctrl = "dislike" or ctrl = "bad" or ctrl = "-" then			thumbs down		else if ctrl = "skip" or ctrl = "next" or ctrl = "~" then			next song		else if ctrl = "tired" or ctrl = "!" then
+			activate			tell application "System Events" to keystroke "t" using command down
+		else if ctrl = "play" or ctrl="&gt;" then
+			play
+		else if ctrl = "pause" or ctrl = "&gt;" or ctrl = "#" then
+			pause
+		else if ctrl = "playpause" then
+			playpause
+		else if ctrl = "mute" or ctrl = "silence" or ctrl = "[" then
+			mute
+		else if ctrl = "unmute" then
+			full volume
+		end if	end tell		if not (ctrl = "activate" or ctrl = "show") and (ctrl = "tired" or ctrl = "!") then		tell application frontmostApplication to activate	end ifend alfred_script</string>
+	<key>disabled</key>
+	<false/>
 	<key>keyword</key>
 	<string>hermes</string>
+	<key>parameter</key>
+	<integer>0</integer>
 	<key>subtitle</key>
 	<string>Commands to control Hermes Player</string>
 	<key>title</key>
