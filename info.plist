@@ -5,26 +5,31 @@
 	<key>action</key>
 	<false/>
 	<key>background</key>
-	<false/>
+	<true/>
 	<key>category</key>
 	<string>APPLESCRIPTS</string>
 	<key>command</key>
-	<string>on alfred_script(ctrl)
-	# We need this for saying you are tired of song.	tell application "System Events"		set frontmostApplication to name of the first process whose frontmost is true	end tell
-	tell application "Hermes"		if ctrl is equal to "like" or ctrl is equal to "good" or ctrl is equal to "+" then
+	<string>on alfred_script(q)
+	set ctrl to q as string
+	tell application "Hermes"		if ctrl is equal to "like" or ctrl is equal to "good" or ctrl is equal to "+" then
 			thumbs up		else if ctrl = "dislike" or ctrl = "bad" or ctrl = "-" then			thumbs down		else if ctrl = "skip" or ctrl = "next" or ctrl = "~" then			next song		else if ctrl = "tired" or ctrl = "!" then
-			activate			tell application "System Events" to keystroke "t" using command down
-			tell application frontmostApplication to activate
+			tired of song
 		else if ctrl = "play" or ctrl="&gt;" then
 			play
-		else if ctrl = "pause" or ctrl = "&gt;" or ctrl = "#" then
+		else if ctrl = "pause" or ctrl = "#" then
 			pause
 		else if ctrl = "playpause" then
 			playpause
-		else if ctrl = "mute" or ctrl = "silence" or ctrl = "[" then
+		else if ctrl = "mute" or ctrl = "silence" then
 			mute
 		else if ctrl = "unmute" then
+			unmute
+		else if ctrl = "loud" then
 			full volume
+		else if ctrl = "louder" then
+			raise volume
+		else if ctrl = "softer" or ctrl = "quieter" then
+			lower volume
 		else if ctrl = "show" or ctrl = "activate" then
 			activate
 		end if	end tellend alfred_script</string>

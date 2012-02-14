@@ -41,7 +41,9 @@ How To Use
 
 Version History
 ---------------
-1.1.0 - 212 November 2011
+1.1.1 - 12 February 2012
+ - Fixed to work as a background script
+1.1.0 - 21 November 2011
  - REQUIRES HERMES 1.0.13 or later
  - Use Hermes' new AppleScript support
  - Add mute, unmute, playpause support
