@@ -4,7 +4,7 @@ An AppleScript so you can control [Hermes](http://alexcrichton.com/hermes/) from
 
 Installation
 ------------
-Download and double click Hermes Controller.alfredextension
+Download [Hermes Controller.alfredextension](http://tresni.github.com/HermesController.alfredextension)
 
 How To Use
 ----------
@@ -14,7 +14,8 @@ How To Use
 `hermes pause`
 `hermes #` - Pause current track, use `hermes play` to resume
 
-`hermes playpause` - Old behavior, toggling Hermes' play/pause state
+`hermes playpause`
+`hermes pp` - Old behavior, toggling Hermes' play/pause state
 
 `hermes next`
 `hermes skip`
@@ -32,15 +33,29 @@ How To Use
 `hermes !` - Mark song as being overplayed
 
 `hermes mute`
-`hermes silence` - Mute Hermes volume
+`hermes silence`
+`hermes m` - Mute Hermes volume
 
-`hermes unmute` - Restore Hermes full volume
+`hermes unmute`
+`hermes u` - Restore Hermes full volume
+
+`hermes volume [#]`
+`hermes v [#]`- Set current Hermes volume to [#]
+
+`hermes stations [#|name]`
+`hermes switch [#|name]` - Switch to the station by id or name.  Name must be an exact match.
 
 `hermes activate`
-`hermes show` - bring the hermes window forward
+`hermes show`
+`hermes a` - bring the hermes window forward
 
 Version History
 ---------------
+1.2 - 15 February 2012
+ - REQUIRES HERMES 1.0.18 or later
+ - Added support for setting exact volume
+ - Added support for switching stations
+ - Added additional single character commands
 1.1.1 - 12 February 2012
  - Fixed to work as a background script
 1.1.0 - 21 November 2011

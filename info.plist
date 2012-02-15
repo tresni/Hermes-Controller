@@ -10,29 +10,46 @@
 	<string>APPLESCRIPTS</string>
 	<key>command</key>
 	<string>on alfred_script(q)
-	set ctrl to q as string
-	tell application "Hermes"		if ctrl is equal to "like" or ctrl is equal to "good" or ctrl is equal to "+" then
-			thumbs up		else if ctrl = "dislike" or ctrl = "bad" or ctrl = "-" then			thumbs down		else if ctrl = "skip" or ctrl = "next" or ctrl = "~" then			next song		else if ctrl = "tired" or ctrl = "!" then
+	set ctrl to word 1 of (q as string)
+	try
+		set option to text ((length of ctrl) + 2) thru end of (q as string)
+	on error
+		set option to ""
+	end try
+	tell application "Hermes"
+		if ctrl is equal to "like" or ctrl is equal to "good" or ctrl is equal to "+" then
 			tired of song
-		else if ctrl = "play" or ctrl="&gt;" then
+		else if ctrl = "dislike" or ctrl = "bad" or ctrl = "-" then
+			thumbs down
+		else if ctrl = "skip" or ctrl = "next" or ctrl = "~" then
+			next song
+		else if ctrl = "tired" or ctrl = "!" then
+			tired of song
+		else if ctrl = "play" or ctrl = "&gt;" then
 			play
 		else if ctrl = "pause" or ctrl = "#" then
 			pause
-		else if ctrl = "playpause" then
+		else if ctrl = "playpause" or ctrl = "pp" then
 			playpause
-		else if ctrl = "mute" or ctrl = "silence" then
+		else if ctrl = "mute" or ctrl = "silence" or ctrl = "m" then
 			mute
-		else if ctrl = "unmute" then
+		else if ctrl = "unmute" or ctrl = "u" then
 			unmute
-		else if ctrl = "loud" then
+		else if ctrl = "loud" or ctrl = "f" then
 			full volume
-		else if ctrl = "louder" then
+		else if ctrl = "louder" or ctrl = "l" then
 			raise volume
-		else if ctrl = "softer" or ctrl = "quieter" then
+		else if ctrl = "softer" or ctrl = "quieter" or ctrl = "q" then
 			lower volume
-		else if ctrl = "show" or ctrl = "activate" then
+		else if ctrl = "volume" or ctrl = "v" then
+			set current volume to v
+		else if ctrl = "show" or ctrl = "activate" or ctrl = "a" then
 			activate
-		end if	end tellend alfred_script</string>
+		else if ctrl = "station" or ctrl = "switch" or ctrl = "s" then
+			set current station to station option
+		end if
+	end tell
+end alfred_script</string>
 	<key>disabled</key>
 	<false/>
 	<key>keyword</key>
