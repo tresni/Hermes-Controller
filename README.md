@@ -1,6 +1,6 @@
 Hermes Controller extension for Alfred
 ======================================
-An AppleScript so you can control Hermes from [Alfred App](http://www.alfredapp.com)
+An AppleScript so you can control [Hermes](http://alexcrichton.com/hermes/) from [Alfred App](http://www.alfredapp.com)
 
 Installation
 ------------
