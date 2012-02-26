@@ -51,6 +51,9 @@ How To Use
 
 Version History
 ---------------
+1.3 - 25 February 2012
+ - Fixed thumbs up actually marking as "tired of song"
+ - Fixed "hermes -" not working.
 1.2 - 15 February 2012
  - REQUIRES HERMES 1.0.18 or later
  - Added support for setting exact volume

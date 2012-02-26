@@ -10,15 +10,19 @@
 	<string>APPLESCRIPTS</string>
 	<key>command</key>
 	<string>on alfred_script(q)
-	set ctrl to word 1 of (q as string)
+	try
+		set ctrl to word 1 of (q as string)
+	on error
+		set ctrl to (q as string)
+	end try
 	try
 		set option to text ((length of ctrl) + 2) thru end of (q as string)
 	on error
 		set option to ""
 	end try
 	tell application "Hermes"
-		if ctrl is equal to "like" or ctrl is equal to "good" or ctrl is equal to "+" then
-			tired of song
+		if ctrl = "like" or ctrl = "good" or ctrl is equal to "+" then
+			thumbs up
 		else if ctrl = "dislike" or ctrl = "bad" or ctrl = "-" then
 			thumbs down
 		else if ctrl = "skip" or ctrl = "next" or ctrl = "~" then
