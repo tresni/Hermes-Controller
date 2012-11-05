@@ -52,22 +52,30 @@ How To Use
 
 Version History
 ---------------
-1.3 - 25 February 2012
+### 1.3.1 - 5 November 2012
+ - parameters are now optional and `hermes activate` is the default action
+
+### 1.3 - 25 February 2012
  - Fixed thumbs up actually marking as "tired of song"
  - Fixed "hermes -" not working.
-1.2 - 15 February 2012
+
+### 1.2 - 15 February 2012
  - REQUIRES HERMES 1.0.18 or later
  - Added support for setting exact volume
  - Added support for switching stations
  - Added additional single character commands
-1.1.1 - 12 February 2012
+
+### 1.1.1 - 12 February 2012
  - Fixed to work as a background script
-1.1.0 - 21 November 2011
+
+### 1.1.0 - 21 November 2011
  - REQUIRES HERMES 1.0.13 or later
  - Use Hermes' new AppleScript support
  - Add mute, unmute, playpause support
  - play/pause no longer act as toggles
-1.0.1 - 28 October 2011
+
+### 1.0.1 - 28 October 2011
  - Added some additional single character commands
-1.0.0 - 27 October 2011
+
+### 1.0.0 - 27 October 2011
  - Initial Release
