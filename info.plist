@@ -47,7 +47,7 @@
 			lower volume
 		else if ctrl = "volume" or ctrl = "v" then
 			set current volume to v
-		else if ctrl = "show" or ctrl = "activate" or ctrl = "a" then
+		else if ctrl = "show" or ctrl = "activate" or ctrl = "a" or ctrl = "" then
 			activate
 		else if ctrl = "station" or ctrl = "switch" or ctrl = "s" then
 			set current station to station option
@@ -59,7 +59,7 @@ end alfred_script</string>
 	<key>keyword</key>
 	<string>hermes</string>
 	<key>parameter</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>subtitle</key>
 	<string>Commands to control Hermes Player</string>
 	<key>title</key>

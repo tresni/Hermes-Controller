@@ -47,7 +47,8 @@ How To Use
 
 `hermes activate`
 `hermes show`
-`hermes a` - bring the hermes window forward
+`hermes a`
+`hermes`- bring the hermes window forward (or launch, if necessary)
 
 Version History
 ---------------
